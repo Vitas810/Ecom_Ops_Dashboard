@@ -1,36 +1,81 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Ecom Ops Dashboard
 
-## Getting Started
+Production-grade React/Next.js pet-project для портфолио senior frontend developer.
 
-First, run the development server:
+## Идея проекта
+
+- **Продукт:** операционная платформа для e-commerce команд.
+- **Что решает:** помогает быстро находить просадки маржи и инциденты каталога, запускать промо и контролировать влияние на юнит-экономику.
+- **Для кого:** operations manager, category manager, performance analyst.
+- **Ключевая ценность:** меньше времени на ручной анализ и быстрее принятие решений по проблемным зонам продаж.
+
+## MVP scope
+
+- Dashboard KPI и тренды маржи
+- Anomaly Explorer с drill-down
+- Incident Management с optimistic updates
+- Promotion Planner с валидацией
+- Saved Views и shareable URL state
+
+Стартовый фронтенд-проект на `Next.js 16` c `App Router`, `React 19`, `TypeScript` и `Tailwind CSS 4`.
+
+## Стек проекта
+
+- `next@16.2.1`
+- `react@19.2.4`
+- `typescript@5`
+- `tailwindcss@4`
+- `eslint@9` + `eslint-config-next`
+- `prettier@3`
+- `husky@9` + `lint-staged`
+
+## Требования
+
+- `Node.js >= 20.9.0`
+- `npm` (в проекте используется `package-lock.json`)
+
+## Быстрый старт
 
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Приложение будет доступно по адресу: [http://localhost:3000](http://localhost:3000).
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Скрипты
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- `npm run dev` — запуск dev-сервера
+- `npm run build` — production-сборка
+- `npm run start` — запуск production-сервера
+- `npm run lint` — проверка ESLint (с `--max-warnings=0`)
+- `npm run typecheck` — проверка TypeScript без эмита
+- `npm run format` — автоформатирование Prettier
+- `npm run format:check` — проверка форматирования
 
-## Learn More
+## Структура проекта
 
-To learn more about Next.js, take a look at the following resources:
+```text
+src/
+  app/
+    layout.tsx
+    page.tsx
+    globals.css
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- `src/app/layout.tsx` — корневой layout и метаданные приложения
+- `src/app/page.tsx` — главная страница
+- `src/app/globals.css` — глобальные стили и подключение Tailwind CSS
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Процесс разработки
 
-## Deploy on Vercel
+1. Изменяйте страницы и компоненты внутри `src/`.
+2. Запускайте `npm run lint` и `npm run typecheck` перед коммитом.
+3. Форматируйте код через `npm run format`.
+4. Husky и lint-staged выполнят проверки на этапе `pre-commit`.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Полезные ссылки
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- [Next.js Documentation](https://nextjs.org/docs)
+- [React Documentation](https://react.dev)
+- [Tailwind CSS Documentation](https://tailwindcss.com/docs)
